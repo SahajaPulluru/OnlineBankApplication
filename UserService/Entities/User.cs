@@ -30,14 +30,8 @@ namespace UserService.Entities
         [Phone]
         public string MobileNumber { get; set; }
 
-        public int Balance
-        {
-            get { return Balance; }
-            set
-            {
-                Balance = 10000;
-            }
-        }
+        public int Balance { get; set; }
+      
 
 
     }

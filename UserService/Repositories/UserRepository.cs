@@ -37,6 +37,8 @@ namespace UserService.Repositories
         public string GetAccountNumber(User user){
             return user.AccountNumber;
         }
-        
+        public User GetAccountWithTransactions(string accountNumber) => context.Users.First(x => x.AccountNumber == accountNumber);
+
+
     }
 }

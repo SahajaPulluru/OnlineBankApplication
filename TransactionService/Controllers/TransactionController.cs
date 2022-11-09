@@ -15,6 +15,5 @@ namespace TransactionService.Controllers
             List<Transaction> transactions = repo.GetTransactions(accountNumber);
             return StatusCode(200,transactions);
         }
-
     }
 }

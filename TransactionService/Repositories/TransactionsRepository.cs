@@ -6,16 +6,20 @@ namespace UserService.Repositories
 {
     public class TransactionsRepository
     {
-        private readonly UserDbContext context;
+        private readonly UserDbContext db;
         public TransactionsRepository()
         {
-            this.context = new UserDbContext();
+            this.db = new UserDbContext();
         }
         public List<Transaction> GetTransactions(string accountnumber)
         {
-            return context.Transactions.Where(t =>t.AccountNumber==accountnumber).OrderBy(x => x.TransDate).ToList(); 
+            IQueryable<Transaction> l= from p in db.Transactions
+                                       where p.AccountNumber == accountnumber
+                                       select p;
+            return l.ToList();
+
         }
-     
+        public User GetAccountWithTransactions(string accountNumber) => db.Users.First(x => x.AccountNumber == accountNumber);
 
     }
 }

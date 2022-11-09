@@ -3,15 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32929.385
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserService", "UserService\UserService.csproj", "{748ED01D-E355-460D-A1B4-4571D0BBBF9A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UserService", "UserService\UserService.csproj", "{748ED01D-E355-460D-A1B4-4571D0BBBF9A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CheckBookService", "CheckBookService\CheckBookService.csproj", "{06CCA9A9-4EBC-4880-9E05-C69AE663D06B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CheckBookService", "CheckBookService\CheckBookService.csproj", "{06CCA9A9-4EBC-4880-9E05-C69AE663D06B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AtmPinService", "AtmPinService\AtmPinService.csproj", "{65231AE3-5394-44CD-9877-7F700BD82D0E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AtmPinService", "AtmPinService\AtmPinService.csproj", "{65231AE3-5394-44CD-9877-7F700BD82D0E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FundTransferService", "FundTransferService\FundTransferService.csproj", "{DCDCF54F-48FB-4A31-B381-9227F57F5E71}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FundTransferService", "FundTransferService\FundTransferService.csproj", "{DCDCF54F-48FB-4A31-B381-9227F57F5E71}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TransactionService", "TransactionService\TransactionService.csproj", "{68C0876A-0431-410D-A178-2A780ECFD65F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FixedDepositService", "FixedDepositService\FixedDepositService.csproj", "{0AC6459D-7283-471D-AFB7-0C3EDEF9213A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BankAppGateway", "BankAppGateway\BankAppGateway.csproj", "{952CB311-53A9-45E9-A70F-7AF52C75CB65}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,10 +37,14 @@ Global
 		{DCDCF54F-48FB-4A31-B381-9227F57F5E71}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DCDCF54F-48FB-4A31-B381-9227F57F5E71}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DCDCF54F-48FB-4A31-B381-9227F57F5E71}.Release|Any CPU.Build.0 = Release|Any CPU
-		{68C0876A-0431-410D-A178-2A780ECFD65F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{68C0876A-0431-410D-A178-2A780ECFD65F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{68C0876A-0431-410D-A178-2A780ECFD65F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{68C0876A-0431-410D-A178-2A780ECFD65F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0AC6459D-7283-471D-AFB7-0C3EDEF9213A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0AC6459D-7283-471D-AFB7-0C3EDEF9213A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0AC6459D-7283-471D-AFB7-0C3EDEF9213A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0AC6459D-7283-471D-AFB7-0C3EDEF9213A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{952CB311-53A9-45E9-A70F-7AF52C75CB65}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{952CB311-53A9-45E9-A70F-7AF52C75CB65}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{952CB311-53A9-45E9-A70F-7AF52C75CB65}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{952CB311-53A9-45E9-A70F-7AF52C75CB65}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
