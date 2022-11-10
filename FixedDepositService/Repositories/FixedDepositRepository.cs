@@ -32,7 +32,7 @@ namespace FixedDepositService.Repositories
                 user.Balance -= amount;
                 Transaction t = new Transaction();
                 t.AccountNumber = accountNumber;
-                t.TransactionType = accountNumber[4];
+                t.TransactionType = accountNumber[4].ToString();
                 t.TransDate = DateTime.UtcNow;
                 t.Amount = amount;
                 db.Transactions.Add(t);

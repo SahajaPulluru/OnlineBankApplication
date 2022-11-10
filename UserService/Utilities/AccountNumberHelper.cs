@@ -4,7 +4,7 @@
     {
         private Random random;
 
-        public string GenerateAccountUniqueId(char acctypeid)
+        public string GenerateAccountUniqueId(string acctypeid)
         {
             if (this.random == null)
             {
@@ -16,7 +16,7 @@
             generated[0] = Char.Parse("W");
             generated[1] = Char.Parse("F");
             generated[2] = Char.Parse("C");
-            generated[3] = acctypeid;
+            generated[3] = Char.Parse(acctypeid);
             for (int i = 0; i < 7; i++)
             {
                 generated[i + 4] = (char)('0' + this.random.Next(10));

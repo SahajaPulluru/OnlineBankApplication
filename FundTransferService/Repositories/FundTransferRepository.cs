@@ -28,7 +28,7 @@ namespace FundTransferService.Repositories
                 originAccount.Balance -= amount;
                 Transaction t = new Transaction();
                 t.AccountNumber = transfer.SourceAccNumber;
-                t.TransactionType = (char)TransactionType.Transfer;
+                t.TransactionType = "T";
                 t.TransDate = DateTime.Now;
                 t.Amount = amount;
                 db.Transactions.Add(t);
@@ -37,7 +37,7 @@ namespace FundTransferService.Repositories
                 destinationAccount.Balance += transfer.TransferAmount;
                 Transaction t1 = new Transaction();
                 t1.AccountNumber = transfer.DestAccNumber;
-                t1.TransactionType = (char)TransactionType.Transfer;
+                t1.TransactionType = "T";
                 t1.TransDate = DateTime.Now;
                 t1.Amount = amount;
                 db.Transactions.Add(t1);
