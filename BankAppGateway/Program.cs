@@ -11,6 +11,14 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Configuration.AddJsonFile("ocelot.json");
 builder.Services.AddOcelot();
+builder.Services.AddCors(c =>
+{
+    c.AddPolicy("AllowOrigin", options =>
+options.WithOrigins("http://localhost:4200")
+    .AllowAnyMethod()
+    .AllowAnyHeader()
+    );
+});
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -21,7 +29,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
+app.UseCors("AllowOrigin");
 app.UseAuthorization();
 app.UseOcelot();
 app.MapControllers();

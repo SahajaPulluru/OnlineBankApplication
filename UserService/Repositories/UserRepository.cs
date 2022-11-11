@@ -16,23 +16,26 @@ namespace UserService.Repositories
         {
             AccountNumberHelper acc=new AccountNumberHelper();
             user.AccountNumber=acc.GenerateAccountUniqueId(user.AccountTypeId);
-            user.Balance = 0;
+            user.Balance = 10000;
+            AtmPin atmPin=new AtmPin();
+            atmPin.AccountNumber=user.AccountNumber;
+            atmPin.Atmpin = 1234;
+            AddAtmPin(atmPin);
             context.Users.Add(user);
             context.SaveChanges();
         }
-        public bool Login(string username,string password)
+        public void AddAtmPin(AtmPin atmpin)
         {
-            User user = context.Users.Single(s => s.UserName.Equals(username));
-            if(user.Password==password)
-            {
-                return true;
-            }
-            return false;
+            context.AtmPins.Add(atmpin);
+            context.SaveChanges();
         }
-        public User Get(string username, string password)
+        public User Login(Login login)
         {
-            User user = context.Users.Single(s => s.UserName.Equals(username) && s.Password.Equals(password));  
+            User user = context.Users.SingleOrDefault(s => s.UserName==login.Username && s.Password == login.Password);
+            if (user == null)
+                return null;
             return user;
+
         }
         public string GetAccountNumber(User user){
             return user.AccountNumber;

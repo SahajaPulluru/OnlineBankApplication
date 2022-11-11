@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using UserService.Entities;
 using UserService.Repositories;
 namespace UserService.Controllers
@@ -21,15 +22,12 @@ namespace UserService.Controllers
         }
         [HttpPost]
         [Route("Login")]
-        public IActionResult Login(string username,string password)
+        public IActionResult Login( Login login)
         {
-            bool flag = db.Login(username, password);
-            if (flag == true)
-            {
-                User user = db.Get(username, password);
-                return StatusCode(200, user);
-            }
-            return StatusCode(500, "User Not Found");
+            var user=db.Login(login);
+            if(user!=null)
+                return StatusCode(200,user);
+            return StatusCode(500, login);
         }
     }
 }

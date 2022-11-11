@@ -1,4 +1,6 @@
-﻿using UserService.Database;
+﻿using AtmPinService.Models;
+using Microsoft.AspNetCore.Mvc;
+using UserService.Database;
 using UserService.Entities;
 
 namespace AtmPinService.Repositories
@@ -15,15 +17,14 @@ namespace AtmPinService.Repositories
             db.AtmPins.Add(atmpin);
             db.SaveChanges();   
         }
-        public AtmPin UpdateAtmPin(int oldAtmpin,int newAtmPin,string accountNumber)
+        public AtmPin UpdateAtmPin([FromBody]NewAtmPin newAtmPin)
         {
-            AtmPin p = db.AtmPins.SingleOrDefault(i => i.AccountNumber==accountNumber);
-            if (p.Atmpin == oldAtmpin)
+            AtmPin p = db.AtmPins.SingleOrDefault(i => i.AccountNumber == newAtmPin.AccountNumber);
+            if (p.Atmpin == newAtmPin.oldAtmPin)
             {
-                p.Atmpin = newAtmPin;
+                db.AtmPins.SingleOrDefault(i => i.AccountNumber == newAtmPin.AccountNumber).Atmpin = newAtmPin.newAtmPin;
+                db.SaveChanges();
             }
-            
-            db.SaveChanges();
             return p;
         }
     }

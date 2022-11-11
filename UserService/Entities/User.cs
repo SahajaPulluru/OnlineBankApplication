@@ -4,11 +4,6 @@ using System.Security.Permissions;
 using System.Xml.Linq;
 namespace UserService.Entities
 {
-    public enum AccountTypeId
-    {
-        Checking = 'C',
-        Saving = 'S'
-    }
     [Table("Tbl_Users")]
     public class User
     {
@@ -25,7 +20,7 @@ namespace UserService.Entities
         [DataType(DataType.Password)]
         public string Password { get; set; }
         [Required]
-        public char AccountTypeId{ get; set; }
+        public string AccountTypeId{ get; set; }
         [Required]
         [Phone]
         public string MobileNumber { get; set; }
