@@ -15,8 +15,6 @@ namespace UserService.Entities
         public string AccountNumber { get; set; }
         [Required]
         public DateTime RequestedDate { get; set; }
-        [Required]
-        public int Priority { get; set; }
     }
 }
 
